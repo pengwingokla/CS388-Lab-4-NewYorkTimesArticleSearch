@@ -1,0 +1,57 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Banner layout -->
+    <LinearLayout
+        android:id="@+id/bannerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/newspaperIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/newspaper"
+            android:contentDescription="Fitness Icon" />
+
+        <TextView
+            android:id="@+id/bannerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Article Search"
+            android:textColor="#000"
+            android:fontFamily="@font/arsenal"
+            android:textSize="25sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Guideline for RecyclerView maximum height -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1"
+        />
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ArticleRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#ede9e8"
+        app:layout_constraintTop_toBottomOf="@id/bannerLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        android:padding="10dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
